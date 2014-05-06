@@ -8,7 +8,7 @@ $url = $_GET["url"];
 $headHTML = <<< EOF
 	<head>
 		<script src='//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script>
-		<script src='scraper.js';
+		<script src='scraper.js'></script>
 		<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
 		<title>maumaumau</title>
 	</head>
@@ -43,18 +43,4 @@ echo $headHTML;
 echo $bodyHTML;
 
 
-echo "
-
-
-
-<style>
-	p {
-		font-size: 28px;
-	}
-</style>
-
-<script>
-	
-</script>
-
-</html>";
+echo "</html>";

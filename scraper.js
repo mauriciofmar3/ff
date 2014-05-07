@@ -1,3 +1,4 @@
+url = $('#address');
 function loadEditorScript() {
 	var s = document.createElement('script');
 	s.type = 'text/javascript';
@@ -12,7 +13,7 @@ function changeFont(value) {
 function start() {
 	$('#story').html('');
 	var chapters;
-	$.get('chapters.php?url=" . $url . "', function(chapters){
+	$.get('chapters.php?url=' + url, function(chapters){
 	    loadChapters(chapters);
 	    console.log('CHAPTERS '  + chapters);
 	});

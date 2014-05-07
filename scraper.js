@@ -4,19 +4,20 @@ function loadEditorScript() {
 	s.src = 'editor.js';
 	$('head').append(s);
 }
+
 function changeFont(value) {
 	$('p').css('font-size', $('#font')[0].value+'px');
 }
+
 function start() {
 	$('#story').html('');
-	
-	
 	var chapters;
 	$.get('chapters.php?url=" . $url . "', function(chapters){
 	    loadChapters(chapters);
 	    console.log('CHAPTERS '  + chapters);
 	});
 }
+
 function loadChapters(chapters) {
 	for(var x = parseInt($('#chapter')[0].value); x <= parseInt(chapters); ++x) {
 		div = document.createElement('div');
@@ -39,6 +40,7 @@ function load(c) {
 	$('#status').html('LOADING CHAPTER ' + c);
 	append(s,c);
 }
+
 function append(s, c) {
 	div = document.createElement('div');
 	$(div).load(s + ' #storytext', function() {
@@ -50,34 +52,36 @@ function append(s, c) {
 		load(c+1);
 	});
 }
+
 $(function() { 
 	if($(window).width() > 1000)
 		start(); 
 	else
 		start2();
-		
 });
+
 
 
 function start2() {
 	$('#story').html('');
 	load2(parseInt($('#chapter')[0].value));
 }
+
 function load2(c) {
 	s = 'chapter.php?url=' + $('#address')[0].value + '&chapter=' + c;
 	console.log(s);
 	$('#status').html('LOADING CHAPTER ' + c);
 	append2(s,c);
 }
+
 function append2(s, c) {
 	div = document.createElement('div');
 	$(div).load(s + ' #storytext', function() {
-		if(div.innerHTML == ''){
+		if(div.innerHTML == '') {
 			$('#status').html('');
 			return;
 		}
 		$('#story').append(div.innerHTML);
 		load2(c+1);
-			
 	});
 }

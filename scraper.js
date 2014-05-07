@@ -1,4 +1,4 @@
-url = $('#address');
+url = $('#address').val();
 function loadEditorScript() {
 	var s = document.createElement('script');
 	s.type = 'text/javascript';

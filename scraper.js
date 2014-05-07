@@ -13,6 +13,7 @@ function changeFont(value) {
 function start() {
 	$('#story').html('');
 	var chapters;
+	console.log('chapters.php?url=' + url);
 	$.get('chapters.php?url=' + url, function(chapters){
 	    loadChapters(chapters);
 	    console.log('CHAPTERS '  + chapters);

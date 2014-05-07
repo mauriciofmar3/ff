@@ -1,4 +1,3 @@
-#!/usr/bin/php
 <?php
 
 $url = $_GET["url"];

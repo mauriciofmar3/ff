@@ -16,7 +16,7 @@ $bodyHTML = <<< EOF
 	<body>
 	<div id='input-div'>
 		<input type='checkbox' id='check' />
-		<input type='text' id='address' value='" $url "' />	
+		<input type='text' id='address' value='$url' />	
 		<input type='button' onclick='javascript:if($(window).width()> 1000)
 				start(); 
 			else
